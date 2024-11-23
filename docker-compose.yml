@@ -1,0 +1,8 @@
+services:
+  bitwarden-portal:
+    build: .
+    container_name: bitwarden-portal
+    env_file: .env
+    volumes:
+      - ./backups:/app/backups
+    restart: unless-stopped
