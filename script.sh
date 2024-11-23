@@ -13,7 +13,7 @@ DEST_CLIENT_ID="$DEST_CLIENT_ID"  # Client ID di Vaultwarden
 DEST_CLIENT_SECRET="$DEST_CLIENT_SECRET"  # Client Secret di Vaultwarden
 DEST_SERVER="$DEST_SERVER"
 
-#ENCRYPTION_PASSWORD="xxxxxxxxxxxxxxxxxxxxxxxxx"
+#ARCHIVE_PASSWORD="xxxxxxxxxxxxxxxxxxxxxxxxx"
 
 # Minimum backup file to mantain
 MIN_FILES=5
