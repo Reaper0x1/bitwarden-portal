@@ -287,10 +287,10 @@ printf '\n'
 
 # By using an API Key, we need to unlock the vault to get a sessionID
 echo "# Unlocking the vault..."
-DEST_SESSION=$(bw unlock $DEST_PASSWORD --raw)
+DEST_SESSION=$(bw unlock "$DEST_PASSWORD" --raw)
 
 if [ -z "$DEST_SESSION" ]; then
-    echo "✕ Error: No destination session retrieved. Check your source credentials and try again."
+    echo "✕ Error: No destination session retrieved. Check your destination credentials and try again."
     exit 1
 fi
 
@@ -306,7 +306,7 @@ printf '\n'
 
 # Export what's currently in the vault, so we can remove it
 echo "# Exporting current items from destination vault..."
-bw --session $DEST_SESSION export --raw --format json > "$DEST_OUTPUT_FILE_PATH"
+bw --session "$DEST_SESSION" export --raw --format json > "$DEST_OUTPUT_FILE_PATH"
 
 if [ $? -ne 0 ]; then
     echo "✕ Error: Failed to export data."
