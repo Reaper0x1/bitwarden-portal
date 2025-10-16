@@ -101,7 +101,11 @@ The script uses the following environment variables for backup and restore confi
 
 - **Server Configuration**
   - `SOURCE_SERVER`: URL of the Bitwarden/Vaultwarden server for the source vault.
-  - `DEST_SERVER`: URL of the Bitwarden/Vaultwarden server for the destination vault.  
+  - `DEST_SERVER`: URL of the Bitwarden/Vaultwarden server for the destination vault.
+
+- **Organization**
+  - `SOURCE_ORGANIZATION_ID`: (Optional) Organization ID for the source vault.
+  - `DEST_ORGANIZATION_ID`: (Optional) Organization ID for the destination vault.
 
 **Note**: You can use both Bitwarden and Vaultwarden for source and destination. If your are using a self-hosted Vaultwarden with a **self-signed certificate** for the domain see [Self-Signed Certificate](#self-signed-certificate) section below.
 
@@ -165,6 +169,7 @@ services:
             - SOURCE_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             # Your source server domain/IP.
             - SOURCE_SERVER=https://vault.bitwarden.com
+            - SOURCE_ORGANIZATION_ID= # Optional, can be found in the URL when you are in the organization.
             # Your Bitwarden/Vaultwarden DESTINATION login info.
             - DEST_ACCOUNT=dest@mail.com
             - DEST_PASSWORD=dest-password
@@ -173,6 +178,7 @@ services:
             - DEST_CLIENT_SECRET=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
             # Your source server domain/IP.
             - DEST_SERVER=http://192.168.1.10:8888 # Can be https://vaultwarden.myserver.local if using self-signed certificate.
+            - DEST_ORGANIZATION_ID= # Optional, can be found in the URL when you are in the organization.
             # The users belongs to process and files.
             - PUID=1000
             - PGID=1000
